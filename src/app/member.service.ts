@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {IMember} from './member.interface';
 import {HttpClient} from '@angular/common/http';
-import { environment } from '../environments/environment';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -27,15 +27,11 @@ export class MemberService {
   }
 
 
-  createPost(post: Partial<IMember>): Observable<IMember> {
+  createMember(post: Partial<IMember>): Observable<IMember> {
     return this.http.post<IMember>(`${this.API_URL}/add`, post);
   }
 
-  deletePost(id: number): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
-  }
-
-  updatePost(post: IMember): Observable<IMember> {
+  updateMember(post: IMember): Observable<IMember> {
     console.log('ok');
     return this.http.put<IMember>(`${this.API_URL}/${post.id}`, post);
 

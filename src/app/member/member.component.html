@@ -4,7 +4,7 @@
     <td>LastName</td>
     <td>Age</td>
     <td>Address</td>
-    <td colspan="2"><input [routerLink]="['/add']" value="Add member"></td>
+    <td colspan="2"><button [routerLink]="['/add']">Add new member</button></td>
   </tr>
   <tr *ngFor="let item of output; index as i">
     <td>{{item.firstName}}</td>
@@ -12,7 +12,7 @@
     <td>{{item.age}}</td>
     <td>{{item.address}}</td>
     <button [routerLink]="['/home',item.id]">view</button>
-    <button>edit</button>
+    <button [routerLink]="['/home/edit',item.id]">edit</button>
     <button (click)="deleteMember(item.id)">delete</button>
   </tr>
 </table>
