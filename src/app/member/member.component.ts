@@ -23,20 +23,4 @@ export class MemberComponent implements OnInit {
   ngOnInit() {
   }
 
-  infoMember(i: number) {
-    this.memberService.getById(i).subscribe(data => {
-      this.info = data;
-    });
-  }
-
-  deleteMember(i: number) {
-    this.memberService.deleteMember(i).subscribe( () => {
-      this.output = this.output.filter(t => t.id !== i);
-    }, this.errorHandle );
-
-  }
-
-  errorHandle( error: any) {
-    alert('Thao tac khong thanh');
-  }
 }

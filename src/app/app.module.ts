@@ -10,6 +10,7 @@ import { CreateMemberComponent } from './create-member/create-member.component';
 import {FormGroup} from '@angular/forms';
 import { DetailMemberComponent } from './detail-member/detail-member.component';
 import { EditMemberComponent } from './edit-member/edit-member.component';
+import { DeleteMemberComponent } from './delete-member/delete-member.component';
 
 
 
@@ -19,7 +20,8 @@ import { EditMemberComponent } from './edit-member/edit-member.component';
     MemberComponent,
     CreateMemberComponent,
     DetailMemberComponent,
-    EditMemberComponent
+    EditMemberComponent,
+    DeleteMemberComponent
 
   ],
   imports: [

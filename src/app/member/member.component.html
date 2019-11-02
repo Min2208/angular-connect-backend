@@ -13,7 +13,7 @@
     <td>{{item.address}}</td>
     <button [routerLink]="['/home',item.id]">view</button>
     <button [routerLink]="['/home/edit',item.id]">edit</button>
-    <button (click)="deleteMember(item.id)">delete</button>
+    <button [routerLink]="['/home/delete',item.id]">delete</button>
   </tr>
 </table>
 
