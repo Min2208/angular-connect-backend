@@ -4,7 +4,7 @@
     <td>LastName</td>
     <td>Age</td>
     <td>Address</td>
-    <td colspan="2"><input type="submit" value="Add member"></td>
+    <td colspan="2"><input routerLink="/add" value="Add member"></td>
   </tr>
   <tr *ngFor="let item of output; index as i">
     <td>{{item.firstName}}</td>

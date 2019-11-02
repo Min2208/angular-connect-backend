@@ -6,12 +6,15 @@ import {AppComponent} from './app.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MemberComponent } from './member/member.component';
+import { CreateMemberComponent } from './create-member/create-member.component';
+import {FormGroup} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MemberComponent
+    MemberComponent,
+    CreateMemberComponent
   ],
   imports: [
     BrowserModule,
