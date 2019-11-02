@@ -4,25 +4,18 @@
     <td>LastName</td>
     <td>Age</td>
     <td>Address</td>
-    <td colspan="2"><input routerLink="/add" value="Add member"></td>
+    <td colspan="2"><input [routerLink]="['/add']" value="Add member"></td>
   </tr>
   <tr *ngFor="let item of output; index as i">
     <td>{{item.firstName}}</td>
     <td>{{item.lastName}}</td>
     <td>{{item.age}}</td>
     <td>{{item.address}}</td>
-    <button (click)="infoMember(item.id)">view</button>
+    <button [routerLink]="['/home',item.id]">view</button>
     <button>edit</button>
     <button (click)="deleteMember(item.id)">delete</button>
   </tr>
 </table>
-<table>
-  <tr *ngIf="info"><td>FirstName: {{info.firstName}}</td></tr>
-  <tr *ngIf="info"><td>FirstName: {{info.lastName}}</td></tr>
-  <tr *ngIf="info"><td>FirstName: {{info.age}}</td></tr>
-  <tr *ngIf="info"><td>FirstName: {{info.address}}</td></tr>
-  <tr *ngIf="info"><td>FirstName: {{info.height}}</td></tr>
-  <tr *ngIf="info"><td>FirstName: {{info.weight}}</td></tr>
-</table>
+
 
 

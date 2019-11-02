@@ -8,13 +8,17 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { MemberComponent } from './member/member.component';
 import { CreateMemberComponent } from './create-member/create-member.component';
 import {FormGroup} from '@angular/forms';
+import { DetailMemberComponent } from './detail-member/detail-member.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberComponent,
-    CreateMemberComponent
+    CreateMemberComponent,
+    DetailMemberComponent
+
   ],
   imports: [
     BrowserModule,
