@@ -1,4 +1,7 @@
 <form novalidate (ngSubmit)="editMember()" [formGroup]="data" class="row justify-content-md-center">
+  <div class="col-sm-9 message" *ngIf="message">
+    <p>{{message}}</p>
+  </div>
   <div class="col-sm-9">
     <div class="form-group row">
       <label class="col-md-3 col-form-label">First Name:</label>
@@ -70,8 +73,4 @@
       <input type="submit" value="submit">
     </div>
   </div>
-
-
-
-
 </form>

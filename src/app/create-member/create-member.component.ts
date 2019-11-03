@@ -10,22 +10,23 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CreateMemberComponent implements OnInit {
   data: FormGroup;
+  message: string;
 
   constructor(private fb: FormBuilder, private memberService: MemberService, private router: Router) {
   }
 
   ngOnInit() {
     this.data = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(4)]],
-      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       age: ['', [Validators.required, Validators.min(18)]],
       location: this.fb.group({
         id: '10',
         name: 'ST'
       }),
-      height: ['', [Validators.required, Validators.minLength(4)]],
-      weight: ['', [Validators.required, Validators.minLength(4)]],
-      address: ['', [Validators.required, Validators.minLength(4)]],
+      height: ['', [Validators.required]],
+      weight: ['', [Validators.required]],
+      address: ['', [Validators.required]],
       img: 'avata.png'
 
     })
@@ -34,7 +35,7 @@ export class CreateMemberComponent implements OnInit {
 
   addMember() {
     this.memberService.createMember(this.data.value).subscribe(next => {
-      this.router.navigate(['/home']);
+      this.message = 'Add Member Success';
     });
     console.log(this.data.value);
   }

@@ -12,6 +12,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class EditMemberComponent implements OnInit {
   member: IMember;
   data: FormGroup;
+  message: string;
 
   constructor(private route: ActivatedRoute,
               private memberService: MemberService,
@@ -21,16 +22,17 @@ export class EditMemberComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.fb.group({
-      firstName: ['', [Validators.required, Validators.minLength(4)]],
-      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      id: '',
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       age: ['', [Validators.required, Validators.min(18)]],
       location: this.fb.group({
         id: '10',
         name: 'ST'
       }),
-      height: ['', [Validators.required, Validators.minLength(4)]],
-      weight: ['', [Validators.required, Validators.minLength(4)]],
-      address: ['', [Validators.required, Validators.minLength(4)]],
+      height: ['', [Validators.required]],
+      weight: ['', [Validators.required]],
+      address: ['', [Validators.required]],
       img: 'avata.png'
 
     })
@@ -50,7 +52,8 @@ export class EditMemberComponent implements OnInit {
 
   editMember() {
     this.memberService.updateMember(this.data.value).subscribe(next => {
-      this.router.navigate(['/home']);
+      // this.router.navigate(['/home']);
+      this.message = 'Update success';
     });
   }
 

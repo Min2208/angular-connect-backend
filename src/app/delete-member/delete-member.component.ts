@@ -11,6 +11,7 @@ import {MemberService} from '../member.service';
 export class DeleteMemberComponent implements OnInit {
 
   member: IMember;
+  message: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,14 +30,15 @@ export class DeleteMemberComponent implements OnInit {
       }
     );
   }
+
   deleteMember(i: number) {
-    this.memberService.deleteMember(i).subscribe( () => {
-      this.router.navigate(['/home']);
-    }, this.errorHandle );
+    this.memberService.deleteMember(i).subscribe(() => {
+      this.message = 'Delete success';
+    }, this.errorHandle);
 
   }
 
-  errorHandle( error: any) {
+  errorHandle(error: any) {
     alert('Thao tac khong thanh');
   }
 }

@@ -1,21 +1,24 @@
-
 <form novalidate (ngSubmit)="addMember()" [formGroup]="data" class="row justify-content-md-center">
+  <div class="col-sm-9 message" *ngIf="message">
+    <p>{{message}}</p>
+  </div>
   <div class="col-sm-9">
     <div class="form-group row">
       <label class="col-md-3 col-form-label">First Name:</label>
       <div class="col-md-9">
-        <input class="form-control" type="text"  formControlName="firstName">
+        <input class="form-control" type="text" formControlName="firstName">
       </div>
     </div>
   </div>
-  <div class="col-md-6 alert-danger" role="alert" *ngIf="data.get('firstName').invalid && data.get('firstName').touched">
+  <div class="col-md-6 alert-danger" role="alert"
+       *ngIf="data.get('firstName').invalid && data.get('firstName').touched">
     Invalid firstName!
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Last Name:</label>
+      <label class="col-md-3 col-form-label">Last Name:</label>
       <div class="col-md-9">
-        <input class="form-control" type="text"  formControlName="lastName">
+        <input class="form-control" type="text" formControlName="lastName">
       </div>
     </div>
   </div>
@@ -24,9 +27,9 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Age:</label>
+      <label class="col-md-3 col-form-label">Age:</label>
       <div class="col-md-9">
-        <input class="form-control" type="text"  formControlName="age">
+        <input class="form-control" type="text" formControlName="age">
       </div>
     </div>
   </div>
@@ -35,9 +38,9 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Height:</label>
+      <label class="col-md-3 col-form-label">Height:</label>
       <div class="col-md-9">
-        <input class="form-control" type="text"  formControlName="height">
+        <input class="form-control" type="text" formControlName="height">
       </div>
     </div>
   </div>
@@ -46,9 +49,9 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Weight:</label>
+      <label class="col-md-3 col-form-label">Weight:</label>
       <div class="col-md-9">
-        <input class="form-control" type="text"  formControlName="weight">
+        <input class="form-control" type="text" formControlName="weight">
       </div>
     </div>
   </div>
@@ -57,9 +60,9 @@
   </div>
   <div class="col-sm-9">
     <div class="form-group row">
-      <label  class="col-md-3 col-form-label">Address:</label>
+      <label class="col-md-3 col-form-label">Address:</label>
       <div class="col-md-9">
-        <input class="form-control" type="text"  formControlName="address">
+        <input class="form-control" type="text" formControlName="address">
       </div>
     </div>
   </div>
@@ -71,8 +74,6 @@
       <input type="submit" value="submit">
     </div>
   </div>
-
-
 
 
 </form>
