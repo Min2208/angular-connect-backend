@@ -23,7 +23,7 @@ export class EditMemberComponent implements OnInit {
     this.data = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(4)]],
       lastName: ['', [Validators.required, Validators.minLength(4)]],
-      age: ['', [Validators.required, Validators.minLength(18)]],
+      age: ['', [Validators.required, Validators.min(18)]],
       location: this.fb.group({
         id: '10',
         name: 'ST'

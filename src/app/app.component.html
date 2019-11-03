@@ -1,21 +1,4 @@
-<!--<table>-->
-<!--  <tr>-->
-<!--    <td>FirstName</td>-->
-<!--    <td>LastName</td>-->
-<!--    <td>Age</td>-->
-<!--    <td>Address</td>-->
-<!--    <td colspan="2"><button [routerLink]="['/add']">Add new member</button></td>-->
-<!--  </tr>-->
-<!--  <tr *ngFor="let item of output; index as i">-->
-<!--    <td>{{item.firstName}}</td>-->
-<!--    <td>{{item.lastName}}</td>-->
-<!--    <td>{{item.age}}</td>-->
-<!--    <td>{{item.address}}</td>-->
-<!--    <button [routerLink]="['/home',item.id]">view</button>-->
-<!--    <button [routerLink]="['/home/edit',item.id]">edit</button>-->
-<!--    <button [routerLink]="['/home/delete',item.id]">delete</button>-->
-<!--  </tr>-->
-<!--</table>-->
+
 <div class="container" style = "height: auto">
   <div id="fix">
     <header class="row">
@@ -28,7 +11,6 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" routerLink="/home"><span class="glyphicon glyphicon-home"></span > Trang chủ</a>
-          <a class="navbar-brand" routerLink="/add"><span class="glyphicon glyphicon-home"></span > Thêm thành viên</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,7 +39,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <span class = "glyphicon glyphicon-th-list"></span>
-          <strong>Menu</strong>
+        </div>
+        <div class="list-group">
+          <a routerLink="/home" class="list-group-item">Danh Sách Nhân Viên</a>
+          <a routerLink="/add" class="list-group-item">Thêm Thành Viên</a>
         </div>
 
       </div>
