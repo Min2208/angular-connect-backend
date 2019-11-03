@@ -1,5 +1,5 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {FormGroup, FormControl, FormBuilder, Validator} from '@angular/forms';
+import {FormGroup, FormControl, FormBuilder, Validator, Validators} from '@angular/forms';
 import {MemberService} from '../member.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -16,17 +16,17 @@ export class CreateMemberComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.fb.group({
-      firstName: '',
-      lastName: '',
-      age: '',
+      firstName: ['', [Validators.required, Validators.minLength(4)]],
+      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      age: ['', [Validators.required, Validators.minLength(18)]],
       location: this.fb.group({
-        id: '1',
-        name: 'GK'
+        id: '10',
+        name: 'ST'
       }),
-      height: '',
-      weight: '',
-      address: '',
-      img: 'quanghai.png'
+      height: ['', [Validators.required, Validators.minLength(4)]],
+      weight: ['', [Validators.required, Validators.minLength(4)]],
+      address: ['', [Validators.required, Validators.minLength(4)]],
+      img: 'avata.png'
 
     })
     ;

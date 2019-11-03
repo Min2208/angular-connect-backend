@@ -1,27 +1,79 @@
-<table>
-  <tr>
-    <td>FirstName:</td>
-    <td> {{member.firstName}}</td>
-  </tr>
-  <tr>
-    <td>LastName:</td>
-    <td> {{member.lastName}}</td>
-  </tr>
-  <tr>
-    <td>Age:</td>
-    <td> {{member.age}}</td>
-  </tr>
-  <tr>
-    <td>Address:</td>
-    <td> {{member.address}}</td>
-  </tr>
-  <tr>
-    <td>Height:</td>
-    <td> {{member.height}}</td>
-  </tr>
-  <tr>
-    <td>Weight:</td>
-    <td> {{member.weight}}</td>
-  </tr>
+<!--<table>-->
+<!--  <tr>-->
+<!--    <td>FirstName:</td>-->
+<!--    <td> {{member.firstName}}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>LastName:</td>-->
+<!--    <td> {{member.lastName}}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Age:</td>-->
+<!--    <td> {{member.age}}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Address:</td>-->
+<!--    <td> {{member.address}}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Height:</td>-->
+<!--    <td> {{member.height}}</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Weight:</td>-->
+<!--    <td> {{member.weight}}</td>-->
+<!--  </tr>-->
 
-</table>
+<!--</table>-->
+
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>FistName: <span>{{member.firstName}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>LastName: <span>{{member.lastName}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Age: <span>{{member.age}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Address: <span>{{member.address}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Height: <span>{{member.height}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <p>Weight: <span>{{member.weight}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-9">
+  <div class="list-group">
+    <div class="list-group-item" >
+      <a [routerLink]="['/home/edit',member.id]">Edit</a>
+      <a [routerLink]="['/home/delete',member.id]">   Delete</a>
+
+    </div>
+  </div>
+</div>
