@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MemberService} from '../member.service';
 import {IMember} from '../member.interface';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-member',
@@ -21,18 +21,17 @@ export class EditMemberComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.fb.group({
-      id: '',
-      firstName: '',
-      lastName: '',
-      age: '',
+      firstName: ['', [Validators.required, Validators.minLength(4)]],
+      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      age: ['', [Validators.required, Validators.minLength(18)]],
       location: this.fb.group({
-        id: '1',
-        name: 'GK'
+        id: '10',
+        name: 'ST'
       }),
-      height: '',
-      weight: '',
-      address: '',
-      img: 'quanghai.png'
+      height: ['', [Validators.required, Validators.minLength(4)]],
+      weight: ['', [Validators.required, Validators.minLength(4)]],
+      address: ['', [Validators.required, Validators.minLength(4)]],
+      img: 'avata.png'
 
     })
     ;
