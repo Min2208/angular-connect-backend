@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {IMember} from './member.interface';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
+import {ILocation} from './location.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,9 @@ export class MemberService {
   }
   findByName(name: string): Observable<IMember[]> {
     return this.http.get<IMember[]>(`${this.API_URL}/search/${name}`);
+  }
+
+  getLocation(): Observable<ILocation[]> {
+    return this.http.get<ILocation[]>(`${this.API_URL}/location`);
   }
 }
