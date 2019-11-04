@@ -1,3 +1,5 @@
+import {ILocation} from './location.interface';
+
 export interface IMember {
   id: number;
   firstName: string;
@@ -6,4 +8,5 @@ export interface IMember {
   height: string;
   weight: string;
   address: string;
+  location: ILocation;
 }

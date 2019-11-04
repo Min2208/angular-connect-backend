@@ -59,6 +59,21 @@
     Invalid Weight!
   </div>
   <div class="col-sm-9">
+    <fieldset formGroupName="location">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label">Location:</label>
+        <div class="col-md-9">
+          <select formControlName="id">
+            <option *ngFor="let option of location" value="{{option.id}}">
+              {{option.name}}
+            </option>
+
+          </select>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="col-sm-9">
     <div class="form-group row">
       <label  class="col-md-3 col-form-label">Address:</label>
       <div class="col-md-9">

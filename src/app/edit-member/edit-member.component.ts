@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MemberService} from '../member.service';
 import {IMember} from '../member.interface';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ILocation} from '../location.interface';
 
 @Component({
   selector: 'app-edit-member',
@@ -13,6 +14,7 @@ export class EditMemberComponent implements OnInit {
   member: IMember;
   data: FormGroup;
   message: string;
+  location: ILocation[];
 
   constructor(private route: ActivatedRoute,
               private memberService: MemberService,
@@ -21,6 +23,12 @@ export class EditMemberComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.memberService.getLocation().subscribe(next => {
+      this.location = next;
+      console.log(this.location);
+    }, error => {
+      alert('thao tac khong thanh cong');
+    });
     this.data = this.fb.group({
       id: '',
       firstName: ['', [Validators.required]],
