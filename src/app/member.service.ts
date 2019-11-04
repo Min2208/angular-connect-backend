@@ -36,4 +36,7 @@ export class MemberService {
     return this.http.put<IMember>(`${this.API_URL}/${post.id}`, post);
 
   }
+  findByName(name: string): Observable<IMember[]> {
+    return this.http.get<IMember[]>(`${this.API_URL}/search/${name}`);
+  }
 }

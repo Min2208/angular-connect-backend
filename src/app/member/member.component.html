@@ -1,6 +1,29 @@
+<div class="col-sm-9">
+  <div class="list-group">
+    <form form novalidate (ngSubmit)="findByName()" [formGroup]="data" class="row justify-content-md-center">
+      <div class="col-sm-9">
+        <div class="form-group row">
+          <label class="col-md-9 ">
+            <input class="form-control" type="text" formControlName="name">
+          </label>
+          <div class="col-md-3">
+            <input class="form-control" type="submit" value="Search">
+          </div>
+        </div>
+      </div>
 
+    </form>
+  </div>
+</div>
+<div class="col-sm-9" *ngIf="search">
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let item of search" [routerLink]="['/home',item.id]">{{item.firstName}} {{item.lastName}}</div>
+  </div>
+</div>
+<hr>
 <div class="col-sm-9">
   <div class="list-group">
     <div class="list-group-item" *ngFor="let item of output" [routerLink]="['/home',item.id]">{{item.firstName}} {{item.lastName}}</div>
   </div>
 </div>
+
